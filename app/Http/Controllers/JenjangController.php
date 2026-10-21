@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Jenjang;
 class JenjangController extends Controller
 {
     /**
@@ -11,14 +11,14 @@ class JenjangController extends Controller
      */
     public function index(Request $request)
     {
-          $jenjangs = \App\Models\Jenjang::query()
+          $jenjangs =Jenjang::query()
             ->when($request->search, function ($query, $search) {
                 $query->where('nama_jenjang', 'like', "%{$search}%")
                       ->orWhere('kode_jenjang', 'like', "%{$search}%");
             })
             ->paginate(10); 
 
-        return view('auth.Jenjang.index', compact('jenjangs'));
+        return view('Jenjang.index', compact('jenjangs'));
     }
 
     /**
