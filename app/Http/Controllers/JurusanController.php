@@ -27,15 +27,24 @@ class JurusanController extends Controller
      */
     public function create()
     {
-        //
+         return view('jurusan.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+     {
+        // Validasi sekaligus simpan hasilnya ke variabel $data
+        $data = $request->validate([
+            'nama_jurusan' => 'required|string|max:255',
+            'kode_jurusan' => 'required|string|unique:jurusans|max:10',
+        ]);
+
+        // Simpan data langsung (tanpa perlu definisikan satu-satu)
+        Jurusan::create($data);
+
+        return redirect()->route('jurusan.index')->with('success', 'Data jurusan berhasil ditambahkan.');
     }
 
     /**

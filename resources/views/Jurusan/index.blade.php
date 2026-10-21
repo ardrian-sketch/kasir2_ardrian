@@ -3,17 +3,16 @@
 @section('title', 'Data Jurusan')
 
 @section('content_header')
-    <h1>Data Jurusan</h1>3
+    <h1>Data Jurusan</h1>
 @stop
 
 @section('content')
     <div class="card">
         {{-- Header dengan Style AdminLTE (Title di kiri, Tools di kanan) --}}
         <div class="card-header">
-            <h3 class="card-title">Tambah jurusan</h3>
+            <h3 class="card-title">Daftar Jurusan</h3>
             <div class="card-tools">
-                    <i class="fas fa-file-pdf"></i> Cetak PDF
-                </a>
+                <a href="{{ route('jurusan.create') }}" class="btn btn-primary btn-sm">
                     <i class="fas fa-plus"></i> Tambah jurusan
                 </a>
             </div>
