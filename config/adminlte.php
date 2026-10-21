@@ -803,7 +803,7 @@ return [
             'label' => 4,
             'label_color' => 'success',
         ],
-[
+        [
             'text' => 'Kelas',
             'url' => 'admin/pages',
             'icon' => 'bi bi-file-earmark',

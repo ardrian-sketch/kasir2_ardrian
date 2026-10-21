@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jurusan extends Model
 {
-    protected $table = 'jurusan';
+    protected $table = 'jurusans';
     
     protected $fillable = [
-        'nama_jurusan',
+        'nama_jurusans',
         'keterangan',
         'status',
     ];
