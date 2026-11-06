@@ -11,14 +11,14 @@ class KelasController extends Controller
      */
     public function index(Request $request)
     {
-        $kelas = Kelas::query()
+        $kelass= Kelas::query()
             ->when($request->search, function ($query, $search) {
                 $query->where('nama_kelas', 'like', "%{$search}%")
                       ->orWhere('kode_kelas', 'like', "%{$search}%");
             })
             ->paginate(10); 
 
-        return view('Kelas.index', compact('kelas'));
+        return view('kelas.index', compact('kelass'));
     }
  
 

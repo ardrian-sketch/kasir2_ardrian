@@ -9,7 +9,8 @@ class Jurusan extends Model
     protected $table = 'jurusans';
     
     protected $fillable = [
-        'nama_jurusans',
+        'kode_jurusan',
+        'nama_jurusan',
         'keterangan',
         'status',
     ];

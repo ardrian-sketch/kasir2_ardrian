@@ -48,9 +48,9 @@
                     <tr>
                         <th style="width: 10px">No</th>
                         <th>Nama Kelas</th>
-                        <th>Jurusan_id</th> 
-                        <th>Jenjang_id</th>
-                        <th>Status</th>   
+                        <th>jurusan_id</th> 
+                        <th>jenjang_id</th>
+                        <th>status</th>   
                     </tr>
                 </thead>
                 <tbody>
@@ -60,6 +60,7 @@
                         <td>{{ $kelas->nama_kelas }}</td>
                         <td>{{ $kelas->jenjang_id }}</td>
                         <td>{{ $kelas->jurusan_id }}</td>
+                        <td>{{ $kelas->kode_kelas }}</td>
                         <td>{{ $kelas->status }}</td> 
                         <td>
                             {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
@@ -88,7 +89,7 @@
         </div>
 
         <div class="card-footer clearfix">
-            {!! $kelas->appends(request()->query())->links('pagination::bootstrap-4') !!}
+            {!! $kelass->appends(request()->query())->links('pagination::bootstrap-4') !!}
         </div>
     </div>
 @stop

@@ -22,7 +22,7 @@
         <div class="card-body pb-0">
             <form action="{{ route('jenjang.index') }}" method="GET" class="mb-3">
                 <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Cari nama jenjang atau kode_jenjang" value="{{ request('search') }}">
+                    <input type="text" name="search" class="form-control" placeholder="Cari nama jurusan atau kode_jurusan" value="{{ request('search') }}">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit">
                             <i class="fas fa-search"></i> Cari
@@ -47,6 +47,7 @@
                 <thead>
                     <tr>
                         <th style="width: 10px">No</th>
+                        <th>Kode Jenjang</th>
                         <th>Nama Jenjang</th>
                         <th>Keterangan</th> 
                         <th>Status</th>   
@@ -62,16 +63,16 @@
                         <td>
                             {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
                             <a class="btn btn-info btn-sm" href="{{ route('jenjang.show', $jenjang->id) }}" title="Lihat">
-                                <i class="fas fa-eye"></i>
+                                <i class="bi bi-eye"></i>
                             </a>
                             <a href="{{ route('jenjang.edit', $jenjang->id) }}" class="btn btn-warning btn-sm" title="Edit">
-                                <i class="fas fa-edit"></i>
+                                <i class="bi bi-pencil"></i>
                             </a>
                             <form action="{{ route('jenjang.destroy', $jenjang->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" title="Hapus">
-                                    <i class="fas fa-trash"></i>
+                                    <i class="bi bi-trash"></i>
                                 </button>
                             </form>
                         </td>
